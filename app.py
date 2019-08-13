@@ -5,9 +5,9 @@ import plotly.graph_objs as go
 
 ########### Set up the chart
 
-myfavoritecolor='C74A2F'
-x_list=['giraffes', 'elephants', 'monkeys']
-y_list=y=[5, 2, 7]
+myfavoritecolor='228B22'
+x_list=['horse', 'lion', 'tiger']
+y_list=y=[3, 5, 10]
 
 data = [go.Bar(
             x=x_list,
@@ -16,9 +16,9 @@ data = [go.Bar(
     )]
 
 layout = go.Layout(
-    title = 'My favorite animals', # Graph title
-    xaxis = dict(title = 'Type of animal'), # x-axis label
-    yaxis = dict(title = 'Number in the zoo'), # y-axis label
+    title = 'Animals that Came in my Mind', # Graph title
+    xaxis = dict(title = 'Type of animas'), # x-axis label
+    yaxis = dict(title = 'Number of Animals), # y-axis label
 
 )
 fig = go.Figure(data=data, layout=layout)
@@ -30,7 +30,7 @@ app = dash.Dash()
 server = app.server
 
 app.layout = html.Div(children=[
-    html.H1('Animals in the Zoo'),
+    html.H1('Animals in my Mind'),
     dcc.Graph(
         id='figure-1',
         figure=fig
